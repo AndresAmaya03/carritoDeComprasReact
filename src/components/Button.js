@@ -1,5 +1,4 @@
-import { hover } from "@testing-library/user-event/dist/hover";
-import { Component } from "react";
+import WithHover from "./WithHover";
 
 const styles = {
     button: {
@@ -19,33 +18,42 @@ const styles = {
 
 }
 
-class Button extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            isHovered: false
-        };
-    }
+// class Button extends Component {
+//     constructor(props) {
+//         super(props)
+//         this.state = {
+//             isHovered: false
+//         };
+//     }
 
-    handleMouseEnter = () => {
-        this.setState({isHovered:true});
-    }
-    handleMouseLeave = () => {
-        this.setState({isHovered:false});
-    }
+//     handleMouseEnter = () => {
+//         this.setState({isHovered:true});
+//     }
+//     handleMouseLeave = () => {
+//         this.setState({isHovered:false});
+//     }
 
-    render() {
-        return(
-            <button style={{
-                ...styles.button,
-                ...(this.state.isHovered ? styles.buttonHover : {})
-            }}
-            onMouseEnter={this.handleMouseEnter}
-            onMouseLeave={this.handleMouseLeave}
-            {...this.props}
-            />
-        )
-    }
-}
+//     render() {
+//         return(
+//             <button style={{
+//                 ...styles.button,
+//                 ...(this.state.isHovered ? styles.buttonHover : {})
+//             }}
+//             onMouseEnter={this.handleMouseEnter}
+//             onMouseLeave={this.handleMouseLeave}
+//             {...this.props}
+//             />
+//         )
+//     }
+// }
 
-export default Button
+// export default Button
+
+const Button = (props) => (
+    <button {...props}>
+        {props.children}
+    </button>
+);
+
+// Exporta el botón envuelto con el HOC de hover (Componente de orden mas alto)
+export default WithHover(Button, styles.button, styles.buttonHover);
