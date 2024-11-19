@@ -1,3 +1,9 @@
+# Shopping cart simulator in react
+This is a simple project to demostrate some of my skills using the react framework. In this project,
+a shopping cart is made where we can add the products showed in screen to a shopping cart, where you
+can see the amount of products in the cart with the use of a button.
+Developed by Andres Roberto Amaya Bracamonte.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
