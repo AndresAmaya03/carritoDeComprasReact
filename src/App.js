@@ -35,7 +35,7 @@ class App extends Component {
   }
 
   mostrarCarro = () => {
-    if(this.state.carro.length){
+    if(this.state.carro.length==0){
       return
     }
     this.setState({ esCarroVisible: !this.state.esCarroVisible })
